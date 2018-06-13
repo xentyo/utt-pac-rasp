@@ -1,17 +1,22 @@
-const task = require("../models").Task;
+
 module.exports = {
   index(req, res) {
-    var tasks = task.all();
     res.render("tasks", {
-      list: tasks
+      list: [
+          {
+              text:'hola'
+          }
+      ]
     })
   },
   store(req, res) {
-      var task = Task.insert({
+      var t = task.insert({
           text: req.body.text
       })
       res.render('task', {
-          obj: task
+          obj: {
+              text: 'Hola mundo'
+            }
       })
   },
   show(req, res) {

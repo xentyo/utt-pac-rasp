@@ -8,12 +8,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/task/:id', {
-  title: 'Express'
-})
-
-router.post('/task/store', {
-  title: 'Express'
-})
+router.get('/task', task_controller.show)
+router.get('/tasks', task_controller.index)
+router.post('/task/store', task_controller.store)
 
 module.exports = router;

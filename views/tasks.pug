@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    .row
+        .tasks
+            each item in list
+                .task.card
+                    .card-content
+                        h1.card-title Title
+                        p.card-body= item.text
